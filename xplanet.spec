@@ -7,12 +7,19 @@ License:	GPL
 Group:		X11/Amusements
 Source0:	http://prdownloads.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
 URL:		http://xplanet.sourceforge.net
-#BuildRequires:	OpenGL-devel
+BuildRequires:	OpenGL-devel
+BuildRequires:	glut-devel
 BuildRequires:	libstdc++-devel	
 BuildRequires:	kernel-headers
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libpng-devel
+BuildRequires:	freetype-devel
+Requires:	libpng
+Requires:	libtiff
+Requires:	libjpeg
+Requires:	freetype
+
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
