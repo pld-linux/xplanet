@@ -16,8 +16,6 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Xplanet is similar to Xearth, where an image of the earth is rendered
