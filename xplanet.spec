@@ -15,7 +15,7 @@ BuildRequires:	freetype-devel
 BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	libstdc++-devel	
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,7 +42,7 @@ l±dowe. Strona domowa Xplanet zawiera odno¶niki do plików z mapami.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure 
+%configure
 
 %{__make} \
 	CPPFLAGS="-I/usr/include/freetype2 -I/usr/X11R6/include -I`pwd`" \
