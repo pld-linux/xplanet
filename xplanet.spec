@@ -35,20 +35,26 @@ l±dowe. Strona domowa Xplanet zawiera odno¶niki do plików z mapami.
 %setup -q
 
 %build
-./configure --prefix=%{_prefix}
+%configure2_13
 
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
+%{__make} \
+	CPPFLAGS="-I/usr/include/freetype2 -I/usr/X11R6/include -I`pwd`" \
+	CXXFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install prefix=$RPM_BUILD_ROOT%{_prefix}
+
+%{__make} install \
+	prefix=$RPM_BUILD_ROOT%{_prefix} \
+	bindir=$RPM_BUILD_ROOT%{_bindir} \
+	mandir=$RPM_BUILD_ROOT%{_mandir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog COPYING CREDITS FAQ INSTALL README
+%doc CREDITS ChangeLog FAQ README
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/xplanet
