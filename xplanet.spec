@@ -1,14 +1,16 @@
 Summary:	Render a planetary image into an X window
 Summary(pl):	Renderuje obrazek planety w okienku X window
 Name:		xplanet
-Version:	0.94
-Release:	2
+Version:	1.0.1
+Release:	1
 License:	GPL
 Group:		X11/Amusements
 Source0:	http://dl.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
-# Source0-md5:	10faa5934cc24f3d913ea100b1df915d
+# Source0-md5:	402fe65bece7adf2fcbf1c0df1e59602
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	OpenGL-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
@@ -36,7 +38,11 @@ l±dowe. Strona domowa Xplanet zawiera odno¶niki do plików z mapami.
 %setup -q
 
 %build
-%configure2_13
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure 
 
 %{__make} \
 	CPPFLAGS="-I/usr/include/freetype2 -I/usr/X11R6/include -I`pwd`" \
@@ -46,16 +52,14 @@ l±dowe. Strona domowa Xplanet zawiera odno¶niki do plików z mapami.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	prefix=$RPM_BUILD_ROOT%{_prefix} \
-	bindir=$RPM_BUILD_ROOT%{_bindir} \
-	mandir=$RPM_BUILD_ROOT%{_mandir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS ChangeLog FAQ README
+%doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/xplanet
