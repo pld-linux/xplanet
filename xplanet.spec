@@ -5,7 +5,7 @@ Version:	0.94
 Release:	2
 License:	GPL
 Group:		X11/Amusements
-Source0:	http://prdownloads.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	freetype-devel
@@ -15,7 +15,6 @@ BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel	
 BuildRequires:	libtiff-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Xplanet is similar to Xearth, where an image of the earth is rendered
