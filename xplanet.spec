@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		X11/Amusements
 Source0:	http://dl.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
+# Source0-md5:	10faa5934cc24f3d913ea100b1df915d
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	freetype-devel
