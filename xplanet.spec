@@ -1,25 +1,19 @@
-Summary:	render a planetary image into an X window
-Summary(pl):	renderuje obrazek planety w okienku X window
+Summary:	Render a planetary image into an X window
+Summary(pl):	Renderuje obrazek planety w okienku X window
 Name:		xplanet
 Version:	0.94
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Amusements
 Source0:	http://prdownloads.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
-URL:		http://xplanet.sourceforge.net
+URL:		http://xplanet.sourceforge.net/
 BuildRequires:	OpenGL-devel
-BuildRequires:	glut-devel
-BuildRequires:	libstdc++-devel	
-BuildRequires:	kernel-headers
-BuildRequires:	libjpeg-devel
-BuildRequires:	libtiff-devel
-BuildRequires:	libpng-devel
 BuildRequires:	freetype-devel
-Requires:	libpng
-Requires:	libtiff
-Requires:	libjpeg
-Requires:	freetype
-
+BuildRequires:	glut-devel
+BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libstdc++-devel	
+BuildRequires:	libtiff-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -34,18 +28,23 @@ may also be displayed. The Xplanet home page has links to locations
 with map files.
 
 %description -l pl
-Xplanet podobne jest do Xearth, gdzie obrazek ziemi jest wy¶wietlany w X window.
+Xplanet podobne jest do Xearth, gdzie obrazek ziemi jest wy¶wietlany w
+X window. Mog± byæ tak¿e wy¶wietlane rzuty azymutalne, Mercatora,
+Mollweide'a, ortograficzne lub prostok±tne, kiedy okienko z globem
+jest interaktywnie obracane. Mog± byæ tak¿e wy¶wietlane inne planety
+l±dowe. Strona domowa Xplanet zawiera odno¶niki do plików z mapami.
 
 %prep
 %setup -q
 
 %build
 ./configure --prefix=%{_prefix}
-%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+
+%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install prefix=$RPM_BUILD_ROOT/%{_prefix}
+%{__make} install prefix=$RPM_BUILD_ROOT%{_prefix}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -55,4 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog COPYING CREDITS FAQ INSTALL README
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%{_datadir}/xplanet/*
+%{_datadir}/xplanet
