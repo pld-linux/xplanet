@@ -47,7 +47,7 @@ l±dowe. Strona domowa Xplanet zawiera odno¶niki do plików z mapami.
 	ac_cv_header_localcharset_h=no
 
 %{__make} \
-	CPPFLAGS="-I/usr/include/freetype2 -I/usr/X11R6/include -I`pwd`" \
+	CPPFLAGS="-I%{_includedir}/freetype2 -I/usr/X11R6/include -I`pwd`" \
 	CXXFLAGS="%{rpmcflags}"
 
 %install
