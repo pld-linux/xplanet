@@ -1,5 +1,5 @@
 Summary:	Render a planetary image into an X window
-Summary(pl):	Renderuje obrazek planety w okienku X window
+Summary(pl.UTF-8):   Renderuje obrazek planety w okienku X window
 Name:		xplanet
 Version:	1.2.0
 Release:	1
@@ -27,12 +27,12 @@ globe the user can rotate interactively. The other terrestrial planets
 may also be displayed. The Xplanet home page has links to locations
 with map files.
 
-%description -l pl
-Xplanet podobne jest do Xearth, gdzie obrazek ziemi jest wy¶wietlany w
-X window. Mog± byæ tak¿e wy¶wietlane rzuty azymutalne, Mercatora,
-Mollweide'a, ortograficzne lub prostok±tne, kiedy okienko z globem
-jest interaktywnie obracane. Mog± byæ tak¿e wy¶wietlane inne planety
-l±dowe. Strona domowa Xplanet zawiera odno¶niki do plików z mapami.
+%description -l pl.UTF-8
+Xplanet podobne jest do Xearth, gdzie obrazek ziemi jest wyÅ›wietlany w
+X window. MogÄ… byÄ‡ takÅ¼e wyÅ›wietlane rzuty azymutalne, Mercatora,
+Mollweide'a, ortograficzne lub prostokÄ…tne, kiedy okienko z globem
+jest interaktywnie obracane. MogÄ… byÄ‡ takÅ¼e wyÅ›wietlane inne planety
+lÄ…dowe. Strona domowa Xplanet zawiera odnoÅ›niki do plikÃ³w z mapami.
 
 %prep
 %setup -q
