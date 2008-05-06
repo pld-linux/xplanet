@@ -9,10 +9,10 @@ Source0:	http://dl.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
 # Source0-md5:	87d62fcdf43ad1beec677bfb6e299ac1
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	OpenGL-devel
+BuildRequires:	OpenGL-glut-devel
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	freetype-devel
-BuildRequires:	OpenGL-glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
