@@ -1,0 +1,90 @@
+--- xplanet-1.2.0.orig/src/buildPlanetMap.cpp	2004-04-20 23:47:21.000000000 +0200
++++ xplanet-1.2.0/src/buildPlanetMap.cpp	2008-08-17 18:40:45.197727542 +0200
+@@ -1,5 +1,6 @@
+ #include <cmath>
+ #include <cstdio>
++#include <cstdlib>
+ #include <map>
+ using namespace std;
+ 
+--- xplanet-1.2.0.orig/src/libannotate/Icon.cpp	2004-02-16 19:36:42.000000000 +0100
++++ xplanet-1.2.0/src/libannotate/Icon.cpp	2008-08-17 18:38:41.957195576 +0200
+@@ -1,4 +1,5 @@
+ #include <sstream>
++#include <cstring>
+ using namespace std;
+ 
+ #include "findFile.h"
+--- xplanet-1.2.0.orig/src/libplanet/Planet.cpp	2005-06-14 20:04:05.000000000 +0200
++++ xplanet-1.2.0/src/libplanet/Planet.cpp	2008-08-17 18:39:06.110739788 +0200
+@@ -3,6 +3,7 @@
+ #include <cctype>
+ #include <sstream>
+ #include <string>
++#include <cstring>
+ using namespace std;
+ 
+ #include "findFile.h"
+--- xplanet-1.2.0.orig/src/libprojection/getProjection.cpp	2005-06-13 17:13:11.000000000 +0200
++++ xplanet-1.2.0/src/libprojection/getProjection.cpp	2008-08-17 18:39:34.897190591 +0200
+@@ -2,6 +2,7 @@
+ #include <cstring>
+ #include <sstream>
+ #include <vector>
++#include <cstdlib>
+ using namespace std;
+ 
+ #include "keywords.h"
+--- xplanet-1.2.0.orig/src/Map.cpp	2005-06-15 01:40:46.000000000 +0200
++++ xplanet-1.2.0/src/Map.cpp	2008-08-17 18:40:24.051143441 +0200
+@@ -1,6 +1,8 @@
+ #include <map>
+ #include <sstream>
+ #include <string>
++#include <cmath>
++#include <cstdlib>
+ using namespace std;
+ 
+ #include "Map.h"
+--- xplanet-1.2.0.orig/src/parseColor.cpp	2004-11-23 18:49:48.000000000 +0100
++++ xplanet-1.2.0/src/parseColor.cpp	2008-08-17 18:41:05.847741802 +0200
+@@ -3,6 +3,8 @@
+ #include <map>
+ #include <sstream>
+ #include <string>
++#include <cstring>
++#include <cstdlib>
+ using namespace std;
+ 
+ #include "findFile.h"
+--- xplanet-1.2.0.orig/src/PlanetProperties.h	2005-04-02 02:43:06.000000000 +0200
++++ xplanet-1.2.0/src/PlanetProperties.h	2008-08-17 18:37:52.727825002 +0200
+@@ -2,6 +2,7 @@
+ #define PLANETPROPERTIES_H
+ 
+ #include <string>
++#include <cstring>
+ #include <vector>
+ 
+ #include "body.h"
+--- xplanet-1.2.0.orig/src/xplanet.cpp	2004-09-09 17:46:05.000000000 +0200
++++ xplanet-1.2.0/src/xplanet.cpp	2008-08-17 18:41:37.707177882 +0200
+@@ -4,6 +4,7 @@
+ #include <map>
+ #include <sstream>
+ #include <vector>
++#include <cstdlib>
+ using namespace std;
+ 
+ #include <sys/time.h>
+--- xplanet-1.2.0.orig/src/xpUtil.cpp	2005-04-02 02:22:51.000000000 +0200
++++ xplanet-1.2.0/src/xpUtil.cpp	2008-08-17 18:41:25.044053781 +0200
+@@ -6,6 +6,8 @@
+ #include <iostream>
+ #include <sstream>
+ #include <string>
++#include <cstring>
++#include <cstdlib>
+ using namespace std;
+ 
+ #include <unistd.h>
