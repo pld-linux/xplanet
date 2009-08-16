@@ -8,6 +8,7 @@ Group:		X11/Amusements
 Source0:	http://dl.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
 # Source0-md5:	5dca0369ca64fa3c006b616b72b5e1cf
 Patch0:		%{name}-gcc43.patch
+Patch1:		%{name}-gcc44.patch
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-glut-devel
@@ -38,6 +39,7 @@ lądowe. Strona domowa Xplanet zawiera odnośniki do plików z mapami.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
