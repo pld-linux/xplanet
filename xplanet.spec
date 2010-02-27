@@ -10,15 +10,19 @@ Source0:	http://dl.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
 Patch0:		%{name}-gcc43.patch
 Patch1:		%{name}-gcc44.patch
 URL:		http://xplanet.sourceforge.net/
-BuildRequires:	OpenGL-devel
-BuildRequires:	OpenGL-glut-devel
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	freetype-devel
+BuildRequires:	gettext-devel
+BuildRequires:	giflib-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
+BuildRequires:	netpbm-devel
+BuildRequires:	pango-devel
+BuildRequires:	pkgconfig
+BuildRequires:	xorg-lib-libXScrnSaver-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
