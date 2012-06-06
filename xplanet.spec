@@ -1,13 +1,12 @@
 Summary:	Render a planetary image into an X window
 Summary(pl.UTF-8):	Renderuje obrazek planety w okienku X window
 Name:		xplanet
-Version:	1.2.2
-Release:	4
+Version:	1.3.0
+Release:	1
 License:	GPL
 Group:		X11/Amusements
 Source0:	http://dl.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
-# Source0-md5:	b38c3b4cfdd772643f876a9bb15f288b
-Patch0:		%{name}-gcc43.patch
+# Source0-md5:	41f7db2ccd1d8b4b989cacaf9adfe692
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -41,7 +40,6 @@ lądowe. Strona domowa Xplanet zawiera odnośniki do plików z mapami.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__aclocal}
