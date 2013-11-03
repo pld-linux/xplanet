@@ -5,7 +5,7 @@ Version:	1.3.0
 Release:	2
 License:	GPL
 Group:		X11/Amusements
-Source0:	http://dl.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
 # Source0-md5:	41f7db2ccd1d8b4b989cacaf9adfe692
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
