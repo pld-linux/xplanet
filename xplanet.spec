@@ -1,27 +1,32 @@
+# TODO: cspice
 Summary:	Render a planetary image into an X window
 Summary(pl.UTF-8):	Renderuje obrazek planety w okienku X window
 Name:		xplanet
-Version:	1.3.0
-Release:	4
-License:	GPL
+Version:	1.3.1
+Release:	1
+License:	GPL v2
 Group:		X11/Amusements
 Source0:	http://downloads.sourceforge.net/xplanet/%{name}-%{version}.tar.gz
-# Source0-md5:	41f7db2ccd1d8b4b989cacaf9adfe692
-Patch0:		files-xplanet-1.3.0-giflib.patch
+# Source0-md5:	9797dbd9697d10205ca1671f728ea30d
+Patch0:		%{name}-c++.patch
+Patch1:		%{name}-giflib.patch
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	freetype-devel
+BuildRequires:	freetype-devel >= 2
 BuildRequires:	gettext-tools
-BuildRequires:	giflib4-devel
+BuildRequires:	giflib-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	netpbm-devel
-BuildRequires:	pango-devel
+BuildRequires:	pango-devel >= 1:1.2.0
 BuildRequires:	pkgconfig
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXScrnSaver-devel
+BuildRequires:	xorg-lib-libXext-devel
+Requires:	pango >= 1:1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,20 +46,23 @@ lądowe. Strona domowa Xplanet zawiera odnośniki do plików z mapami.
 
 %prep
 %setup -q
-%patch0 -p0
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+# current code doesn't build in C++11 mode
+CXXFLAGS="%{rpmcxxflags} -std=gnu++98"
 # force using nl_langinfo interface instead of libcharset
 %configure \
 	ac_cv_header_localcharset_h=no
 
-%{__make} \
-	CPPFLAGS="-I/usr/include/freetype2 -I/usr/X11R6/include -I`pwd`" \
-	CXXFLAGS="%{rpmcflags}"
+%{__make}
+#	CPPFLAGS="-I/usr/include/freetype2 -I/usr/X11R6/include -I`pwd`" \
+#	CXXFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -67,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%doc AUTHORS ChangeLog NEWS README TODO
+%attr(755,root,root) %{_bindir}/xplanet
+%{_mandir}/man1/xplanet.1*
 %{_datadir}/xplanet
