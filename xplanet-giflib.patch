@@ -1,0 +1,38 @@
+--- xplanet-1.3.1/src/libimage/gif.c.orig	2013-02-16 20:37:47.000000000 +0100
++++ xplanet-1.3.1/src/libimage/gif.c	2018-12-24 11:36:17.901970999 +0100
+@@ -179,7 +179,11 @@
+ 	}
+     }
+     
++#if (GIFLIB_MAJOR > 5) || (GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1)
++    if (DGifCloseFile(GifFile, NULL) == GIF_ERROR) {
++#else
+     if (DGifCloseFile(GifFile) == GIF_ERROR) {
++#endif
+ 	return(0);
+     }
+ 
+@@ -493,7 +497,11 @@
+ static void QuitGifError(GifFileType *GifFile)
+ {
+     fprintf(stderr, "Error writing GIF file\n");
++#if (GIFLIB_MAJOR > 5) || (GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1)
++    if (GifFile != NULL) EGifCloseFile(GifFile, NULL);
++#else
+     if (GifFile != NULL) EGifCloseFile(GifFile);
++#endif
+ }
+ 
+ int 
+@@ -589,7 +597,11 @@
+ 	Ptr += width;
+     }
+ 
++#if (GIFLIB_MAJOR > 5) || (GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1)
++    if (EGifCloseFile(GifFile, NULL) == GIF_ERROR)
++#else
+     if (EGifCloseFile(GifFile) == GIF_ERROR)
++#endif
+ 
+     {
+ 	QuitGifError(GifFile);
