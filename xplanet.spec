@@ -1,4 +1,3 @@
-# TODO: cspice
 Summary:	Render a planetary image into an X window
 Summary(pl.UTF-8):	Renderuje obrazek planety w okienku X window
 Name:		xplanet
@@ -13,6 +12,7 @@ Patch1:		%{name}-giflib.patch
 URL:		http://xplanet.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	cspice-devel
 BuildRequires:	freetype-devel >= 2
 BuildRequires:	gettext-tools
 BuildRequires:	giflib-devel
@@ -61,8 +61,6 @@ CXXFLAGS="%{rpmcxxflags} -std=gnu++98"
 	ac_cv_header_localcharset_h=no
 
 %{__make}
-#	CPPFLAGS="-I/usr/include/freetype2 -I/usr/X11R6/include -I`pwd`" \
-#	CXXFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
